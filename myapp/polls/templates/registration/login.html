@@ -1,0 +1,10 @@
+{% if form.errors %}
+    <h3>User name doesnt match password</h3>
+{% endif %}
+{% if next %}
+    {% if user.is_authenticated %}
+        <p>Your Account does not have access to this Page</p>
+        {% else %}
+        <p>Please log in to see thia page
+    {% endif %}
+{% endif %}

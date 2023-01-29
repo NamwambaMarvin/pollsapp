@@ -1,0 +1,20 @@
+   
+ <!DOCTYPE html>  
+   {% if latest_question_list %} 
+<ul> {% for question in latest_question_list %} 
+    <li><a href="{%url 'polls:details' question.id%}">{{ question.question_text }}</a></li> {% endfor %} 
+</ul> 
+    {% else %} 
+        <p>No polls are available.</p> 
+    {% endif %}
+    {% if question_list %}
+        {% for question,choice in question_list %}
+        <h1> {{ question }} </h1>
+        <hr>
+        {% for one_choice in choice%}
+        <h2> {{ one_choice }}</h2>
+        {% endfor%}
+        {% endfor %}
+    {% endif %}
+<h1>Choose here </h1>
+
